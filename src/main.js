@@ -1,4 +1,8 @@
 // query selector variables go here 👇
+const randomButton = document.querySelector(".show-random");
+const currentImage = document.querySelector(".poster-img");
+const currentTitle = document.querySelector(".poster-title");
+const currentQuote = document.querySelector(".poster-quote");
 
 // we've provided you with some data to work with 👇
 // tip: you can tuck this data out of view with the dropdown found near the line number where the variable is declared 
@@ -102,9 +106,24 @@ var quotes = [
 var savedPosters = [];
 var currentPoster;
 
+
 // event listeners go here 👇
+document.addEventListener("DOMContentLoaded", getRandom);
+randomButton.addEventListener("click", getRandom);
 
 // functions and event handlers go here 👇
+function getRandom() {
+  const image = images[getRandomIndex(images)];
+  const title = titles[getRandomIndex(titles)];
+  const quote = quotes[getRandomIndex(quotes)];
+
+  currentPoster = createPoster(image, title, quote);
+
+  currentImage.src = currentPoster.imageURL;
+  currentTitle.innerHTML = currentPoster.title;
+  currentQuote.innerHTML = currentPoster.quote;
+}
+
 // (we've provided two to get you started)!
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);

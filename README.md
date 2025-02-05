@@ -1,7 +1,5 @@
 # Hang In There
 
-A boilerplate repo. 
-
 ## Set Up
 
 1. Fork this repository
