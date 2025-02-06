@@ -49,7 +49,7 @@ ______________________________________________________
 
 ### Iteration 1
 - [x] When a user clicks the “Make Your Own Poster” button, we should see the form, and the main poster should be hidden
-- [ ] When a user clicks the “View Saved Posters” button, we should see the saved posters area, and the main poster should be hidden
+- [x] When a user clicks the “View Saved Posters” button, we should see the saved posters area, and the main poster should be hidden
 - [ ] When a user clicks the “Nevermind, take me back!” or “Back to Main” buttons, we should only see the main poster section
 
 In summary: Be able to switch between the three views (main poster, form, and saved posters) on the correct button clicks
