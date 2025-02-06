@@ -6,6 +6,8 @@ const currentQuote = document.querySelector(".poster-quote");
 const randomButton = document.querySelector(".show-random");
 const makePosterButton = document.querySelector(".show-form");
 const showSavedButton = document.querySelector(".show-saved");
+const showMainButton = document.querySelector(".show-main");
+const backToMainButton = document.querySelector(".back-to-main");
 
 const mainView = document.querySelector(".main-poster");
 const formView = document.querySelector(".poster-form");
@@ -119,6 +121,8 @@ document.addEventListener("DOMContentLoaded", getRandom);
 randomButton.addEventListener("click", getRandom);
 makePosterButton.addEventListener("click", displayForm);
 showSavedButton.addEventListener("click", displaySaved);
+showMainButton.addEventListener("click", displayMain);
+backToMainButton.addEventListener("click", displayMain);
 
 // functions and event handlers go here 👇
 function getRandom() {
@@ -141,6 +145,11 @@ function displayForm() {
 function displaySaved() {
   savedView.classList.toggle("hidden");
   hide([mainView, formView]);
+}
+
+function displayMain() {
+  mainView.classList.toggle("hidden");
+  hide([formView, savedView]);
 }
 
 function hide(elementList) {
