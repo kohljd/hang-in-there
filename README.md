@@ -42,3 +42,38 @@ ______________________________________________________
 
 ### Wins + Challenges:
 [//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
+
+### Iteration 0
+- [x] When the page loads, we should see a poster with a randomly selected image, title, and quote
+- [x] Every time the user clicks the Show Random Poster button, a new random poster is displayed.
+
+### Iteration 1
+- [ ] When a user clicks the “Make Your Own Poster” button, we should see the form, and the main poster should be hidden
+- [ ] When a user clicks the “View Saved Posters” button, we should see the saved posters area, and the main poster should be hidden
+- [ ] When a user clicks the “Nevermind, take me back!” or “Back to Main” buttons, we should only see the main poster section
+
+In summary: Be able to switch between the three views (main poster, form, and saved posters) on the correct button clicks
+
+### Iteration 2
+- [ ] On the new poster form view, users should be able to fill out the three input fields and then hit the Show My Poster button
+- [ ] When the Show My Poster button is clicked, several things will happen:
+  - [ ] Use the values from the inputs to create a new, unique poster object (part of your data model)
+  - [ ] Save the submitted data into the respective arrays (image URL into the images array, etc - all part of your data model) so that future random posters can use the user-created data
+  - [ ] Change back to the main poster view (hiding the form view again)
+  - [ ] Use the new, unique poster object (part of your data model) to display the newly created poster image, title, and quote in the main view on the DOM
+
+### Iteration 3
+- [ ] When a user clicks the “Save This Poster” button, the current main poster will be added to the savedPosters array.
+- [ ] If a user clicks the “Save This Poster” more than once on a single poster, it will still only be saved once (no duplicates)
+- [ ] When a user clicks the “Show Saved Posters” button, we should see the saved posters section
+- [ ] All the posters in the savedPosters array should be displayed in the saved posters grid section
+
+### Iteration 4
+- [ ] From the saved posters view, if a user double clicks a saved poster, it will be deleted
+  - HTML onclick attributes should not be used in any HTML code - all functionality should be through JavaScript.
+
+### Optional Extensions
+- [ ] Implement data validation and error handling into the form (disable button, provide error messages if data entered is not correct, etc)
+- [ ] In the main poster view, allow users to click each piece of the poster (image, title, quote) to update just that piece with another random item from the appropriate array
+- [ ] When a user single clicks a saved poster, create a modal to view it larger
+- [ ] Allow users to drag and drop saved posters into whatever order they want them to appear
