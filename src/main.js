@@ -1,8 +1,14 @@
 // query selector variables go here 👇
-const randomButton = document.querySelector(".show-random");
 const currentImage = document.querySelector(".poster-img");
 const currentTitle = document.querySelector(".poster-title");
 const currentQuote = document.querySelector(".poster-quote");
+
+const randomButton = document.querySelector(".show-random");
+const makePosterButton = document.querySelector(".show-form");
+
+const mainView = document.querySelector(".main-poster");
+const formView = document.querySelector(".poster-form");
+const savedView = document.querySelector(".saved-posters");
 
 // we've provided you with some data to work with 👇
 // tip: you can tuck this data out of view with the dropdown found near the line number where the variable is declared 
@@ -110,6 +116,7 @@ var currentPoster;
 // event listeners go here 👇
 document.addEventListener("DOMContentLoaded", getRandom);
 randomButton.addEventListener("click", getRandom);
+makePosterButton.addEventListener("click", displayForm);
 
 // functions and event handlers go here 👇
 function getRandom() {
@@ -122,6 +129,15 @@ function getRandom() {
   currentImage.src = currentPoster.imageURL;
   currentTitle.innerHTML = currentPoster.title;
   currentQuote.innerHTML = currentPoster.quote;
+}
+
+function displayForm() {
+  formView.classList.toggle("hidden");
+  hide([mainView, savedView]);
+}
+
+function hide(elementList) {
+  elementList.forEach(element => element.classList.add("hidden"));
 }
 
 // (we've provided two to get you started)!
