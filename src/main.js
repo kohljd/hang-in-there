@@ -119,10 +119,10 @@ var currentPoster;
 // event listeners go here 👇
 document.addEventListener("DOMContentLoaded", getRandom);
 randomButton.addEventListener("click", getRandom);
-makePosterButton.addEventListener("click", displayForm);
-showSavedButton.addEventListener("click", displaySaved);
-showMainButton.addEventListener("click", displayMain);
-backToMainButton.addEventListener("click", displayMain);
+makePosterButton.addEventListener("click", () => display(formView));
+showSavedButton.addEventListener("click", () => display(savedView));
+showMainButton.addEventListener("click", () => display(mainView));
+backToMainButton.addEventListener("click", () => display(mainView));
 
 // functions and event handlers go here 👇
 function getRandom() {
@@ -137,23 +137,16 @@ function getRandom() {
   currentQuote.innerHTML = currentPoster.quote;
 }
 
-function displayForm() {
-  formView.classList.toggle("hidden");
-  hide([mainView, savedView]);
-}
+function display(viewName) {
+  const views = [mainView, formView, savedView];
 
-function displaySaved() {
-  savedView.classList.toggle("hidden");
-  hide([mainView, formView]);
-}
-
-function displayMain() {
-  mainView.classList.toggle("hidden");
-  hide([formView, savedView]);
-}
-
-function hide(elementList) {
-  elementList.forEach(element => element.classList.add("hidden"));
+  for (const view of views) {
+    if (view === viewName) {
+      view.classList.toggle("hidden");
+    } else {
+      view.classList.add("hidden");
+    }
+  }
 }
 
 // (we've provided two to get you started)!
@@ -166,5 +159,6 @@ function createPoster(imageURL, title, quote) {
     id: Date.now(), 
     imageURL: imageURL, 
     title: title, 
-    quote: quote}
+    quote: quote,
+  }
 }
