@@ -9,6 +9,7 @@ const showSavedButton = document.querySelector(".show-saved");
 const showMainButton = document.querySelector(".show-main");
 const backToMainButton = document.querySelector(".back-to-main");
 const makePosterButton = document.querySelector(".make-poster");
+const savePosterButton = document.querySelector(".save-poster");
 
 const mainView = document.querySelector(".main-poster");
 const formView = document.querySelector(".poster-form");
@@ -126,6 +127,7 @@ showSavedButton.addEventListener("click", () => display(savedView));
 showMainButton.addEventListener("click", () => display(mainView));
 backToMainButton.addEventListener("click", () => display(mainView));
 makePosterButton.addEventListener("click", createUserPoster);
+savePosterButton.addEventListener("click", savePoster);
 
 // functions and event handlers go here 👇
 function getRandom() {
@@ -170,6 +172,10 @@ function displayPoster() {
   currentImage.src = currentPoster.imageURL;
   currentTitle.innerHTML = currentPoster.title;
   currentQuote.innerHTML = currentPoster.quote;
+}
+
+function savePoster() {
+  if (!savedPosters.includes(currentPoster)) savedPosters.push(currentPoster);
 }
 
 function getRandomIndex(array) {

@@ -63,8 +63,8 @@ In summary: Be able to switch between the three views (main poster, form, and sa
   - [x] Use the new, unique poster object (part of your data model) to display the newly created poster image, title, and quote in the main view on the DOM
 
 ### Iteration 3
-- [ ] When a user clicks the “Save This Poster” button, the current main poster will be added to the savedPosters array.
-- [ ] If a user clicks the “Save This Poster” more than once on a single poster, it will still only be saved once (no duplicates)
+- [x] When a user clicks the “Save This Poster” button, the current main poster will be added to the savedPosters array.
+- [x] If a user clicks the “Save This Poster” more than once on a single poster, it will still only be saved once (no duplicates)
 - [ ] When a user clicks the “Show Saved Posters” button, we should see the saved posters section
 - [ ] All the posters in the savedPosters array should be displayed in the saved posters grid section
 
