@@ -4,15 +4,17 @@ const currentTitle = document.querySelector(".poster-title");
 const currentQuote = document.querySelector(".poster-quote");
 
 const randomButton = document.querySelector(".show-random");
-const makePosterButton = document.querySelector(".show-form");
+const posterFormButton = document.querySelector(".show-form");
 const showSavedButton = document.querySelector(".show-saved");
 const showMainButton = document.querySelector(".show-main");
 const backToMainButton = document.querySelector(".back-to-main");
+const makePosterButton = document.querySelector(".make-poster");
 
 const mainView = document.querySelector(".main-poster");
 const formView = document.querySelector(".poster-form");
 const savedView = document.querySelector(".saved-posters");
 
+// const form = document.querySelector(".poster-form")
 // we've provided you with some data to work with 👇
 // tip: you can tuck this data out of view with the dropdown found near the line number where the variable is declared 
 var images = [
@@ -119,10 +121,11 @@ var currentPoster;
 // event listeners go here 👇
 document.addEventListener("DOMContentLoaded", getRandom);
 randomButton.addEventListener("click", getRandom);
-makePosterButton.addEventListener("click", () => display(formView));
+posterFormButton.addEventListener("click", () => display(formView));
 showSavedButton.addEventListener("click", () => display(savedView));
 showMainButton.addEventListener("click", () => display(mainView));
 backToMainButton.addEventListener("click", () => display(mainView));
+makePosterButton.addEventListener("click", createUserPoster);
 
 // functions and event handlers go here 👇
 function getRandom() {
@@ -131,10 +134,7 @@ function getRandom() {
   const quote = quotes[getRandomIndex(quotes)];
 
   currentPoster = createPoster(image, title, quote);
-
-  currentImage.src = currentPoster.imageURL;
-  currentTitle.innerHTML = currentPoster.title;
-  currentQuote.innerHTML = currentPoster.quote;
+  displayPoster();
 }
 
 function display(viewName) {
@@ -149,7 +149,29 @@ function display(viewName) {
   }
 }
 
-// (we've provided two to get you started)!
+function createUserPoster(event) {
+  event.preventDefault();
+
+  const image = document.querySelector("#poster-image-url").value;
+  const title = document.querySelector("#poster-title").value;
+  const quote = document.querySelector("#poster-quote").value;
+
+  if (!images.includes(image)) images.push(image);
+  if (!titles.includes(title)) titles.push(title);
+  if (!quotes.includes(quote)) quotes.push(quote);
+
+  currentPoster = createPoster(image, title, quote);
+
+  displayPoster();
+  display(mainView);
+}
+
+function displayPoster() {
+  currentImage.src = currentPoster.imageURL;
+  currentTitle.innerHTML = currentPoster.title;
+  currentQuote.innerHTML = currentPoster.quote;
+}
+
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }

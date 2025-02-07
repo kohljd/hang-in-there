@@ -55,12 +55,12 @@ ______________________________________________________
 In summary: Be able to switch between the three views (main poster, form, and saved posters) on the correct button clicks
 
 ### Iteration 2
-- [ ] On the new poster form view, users should be able to fill out the three input fields and then hit the Show My Poster button
+- [x] On the new poster form view, users should be able to fill out the three input fields and then hit the Show My Poster button
 - [ ] When the Show My Poster button is clicked, several things will happen:
-  - [ ] Use the values from the inputs to create a new, unique poster object (part of your data model)
-  - [ ] Save the submitted data into the respective arrays (image URL into the images array, etc - all part of your data model) so that future random posters can use the user-created data
-  - [ ] Change back to the main poster view (hiding the form view again)
-  - [ ] Use the new, unique poster object (part of your data model) to display the newly created poster image, title, and quote in the main view on the DOM
+  - [x] Use the values from the inputs to create a new, unique poster object (part of your data model)
+  - [x] Save the submitted data into the respective arrays (image URL into the images array, etc - all part of your data model) so that future random posters can use the user-created data
+  - [x] Change back to the main poster view (hiding the form view again)
+  - [x] Use the new, unique poster object (part of your data model) to display the newly created poster image, title, and quote in the main view on the DOM
 
 ### Iteration 3
 - [ ] When a user clicks the “Save This Poster” button, the current main poster will be added to the savedPosters array.
