@@ -72,6 +72,177 @@ In summary: Be able to switch between the three views (main poster, form, and sa
 - [x] From the saved posters view, if a user double clicks a saved poster, it will be deleted
   - HTML onclick attributes should not be used in any HTML code - all functionality should be through JavaScript.
 
+### Iteration 5
+- [ ] On the main view, a user should see a newly added “Unmotivational Posters” button located after the existing buttons.
+- [ ] When a user clicks the “Unmotivational Posters” button, we should see an newly created Unmotivational Posters html section with:
+  - [ ] a title of “Unmotivational Posters”
+  - [ ] a div that will eventually hold the displayed posters (not actually a visible part of the page until posters are displayed)
+  - [ ] a “Back to Main” button
+- [ ] The main poster view should be hidden when viewing the Unmotivational Posters view
+- [ ] When a user clicks the “Back to Main” button, we should see the main poster view and the unmotivational posters view should be hidden.
+
+The data you’ll need to complete this feature is in the dataset below.
+<details>
+<summary> Unmotivational Posters Data Set</summary>
+
+```JS
+let unmotivationalPosters = [
+  {
+    name: "FAILURE",
+    description: "Why bother trying? It's probably not worth it.",
+    price: 68.00,
+    year: 2019,
+    vintage: true,
+    img_url: "./assets/failure.jpg",
+  },
+  {
+    name: "MEDIOCRITY",
+    description: "Dreams are just that—dreams.",
+    price: 127.00,
+    year: 2021,
+    vintage: false,
+    img_url: "./assets/mediocrity.jpg",
+  },
+  {
+    name: "REGRET",
+    description: "Hard work rarely pays off.",
+    price: 89.00,
+    year: 2018,
+    vintage: true,
+    img_url:  "./assets/regret.jpg",
+  },
+  {
+    name: "FUTILITY",
+    description: "You're not good enough.",
+    price: 150.00,
+    year: 2016,
+    vintage: false,
+    img_url:  "./assets/futility.jpg",
+  },
+  {
+    name: "DEFEAT",
+    description: "It's too late to start now.",
+    price: 35.00,
+    year: 2023,
+    vintage: false,
+    img_url:  "./assets/defeat.jpg",
+  },
+  {
+    name: "HOPELESSNESS",
+    description: "Stay in your comfort zone; it's safer.",
+    price: 112.00,
+    year: 2020,
+    vintage: true,
+    img_url: "./assets/hopelessness.jpg",
+  },
+  {
+    name: "LAZINESS",
+    description: "You can't change anything.",
+    price: 25.00,
+    year: 2022,
+    vintage: false,
+    img_url: "./assets/laziness.jpg",
+  },
+  {
+    name: "PROCRASTINATION",
+    description: "Better to avoid failure by not trying at all.",
+    price: 48.00,
+    year: 2017,
+    vintage: true,
+    img_url: "./assets/procrastination.jpg",
+  },
+  {
+    name: "DESPAIR",
+    description: "Let someone else do it; you’ll just mess it up.",
+    price: 73.00,
+    year: 2015,
+    vintage: false,
+    img_url: "./assets/despair.jpg",
+  },
+  {
+    name: "NEGLECT",
+    description: "Happiness is overrated.",
+    price: 160.00,
+    year: 2019,
+    vintage: true,
+    img_url: "./assets/neglect.jpg",
+  },
+  {
+    name: "FEAR",
+    description: "Giving up is always an option.",
+    price: 91.00,
+    year: 2014,
+    vintage: false,
+    img_url: "./assets/fear.jpg",
+  },
+  {
+    name: "APATHY",
+    description: "No one cares about your effort.",
+    price: 110.00,
+    year: 2016,
+    vintage: true,
+    img_url: "./assets/apathy.jpg",
+  },
+  {
+    name: "MISERY",
+    description: "Why take risks when you can stay stagnant?",
+    price: 55.00,
+    year: 2021,
+    vintage: false,
+    img_url: "./assets/misery.jpg",
+  },
+  {
+    name: "BLAME",
+    description: "Expect disappointment and you'll never be disappointed.",
+    price: 39.00,
+    year: 2017,
+    vintage: true,
+    img_url: "./assets/blame.jpg",
+  },
+  {
+    name: "DOUBT",
+    description: "Success is for other people, not you.",
+    price: 140.00,
+    year: 2020,
+    vintage: false,
+    img_url: "./assets/doubt.jpg",
+  }
+];
+```
+</details>
+
+Let’s assume this data was pulled from a database. Each object has more data than what we need for creating and displaying posters. Our posters only have, and only need, an id, imageURL, title and quote. We’ll want to clean this data before we use it in our application.
+
+Copy/paste the dataset into your main.js file after the existing arrays of images, titles and quotes.
+- [ ] Create a cleanData() function to go through each piece of this data and make it match the format we’ve been using for our poster data.
+- [ ] When a user visits the Unmotivational Posters view, we should see all 15 unmotivational posters displayed immediately. Use the cleaned data for this.
+  - Don’t worry about the layout or styling yet
+
+
+### Iteration 6
+- [ ] From the unmotivational posters view, if a user double clicks a poster, it will be deleted
+  - Users should be able to double click anywhere on the poster to delete it - on the image, text or background.
+  - HTML onclick attributes should not be used in any HTML code - all functionality should be through JavaScript.
+  - The poster should be removed from your cleaned unmotivational posters data set and should no longer be displayed on the DOM.
+  - If the user navigates away from the Unmotivational Posters view after deleting some posters, those posters should still be gone when they navigate back to that view.
+
+### Iteration 7
+- [ ] Using CSS, make the styling/format of the new “Unmotivational Posters” button (on the main page) and the “Back to Main” button (on the Unmotivational Posters page) match the other buttons throughout the app.
+- [ ] Using CSS flexbox (not grid), control the layout of the unmotivational posters to match the comp provided here. Note: the number of posters you see in each row will flex based on the width of the screen, thats a good thing!
+- [ ] Using CSS, make the style and size of the unmotivational posters match the comp provided here. You’ll notice they should look slightly different than the saved posters.
+
+<details>
+<summary> Top of Unmotivational Posters View</summary>
+
+![alt text](readme-imgs/image.png)
+</details>
+
+<details>
+<summary> Bottom of Unmotivational Posters View</summary>
+
+![alt text](readme-imgs/image2.png)
+</details>
+
 ### Optional Extensions
 - [ ] Implement data validation and error handling into the form (disable button, provide error messages if data entered is not correct, etc)
 - [ ] In the main poster view, allow users to click each piece of the poster (image, title, quote) to update just that piece with another random item from the appropriate array
