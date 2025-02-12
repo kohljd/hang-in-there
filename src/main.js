@@ -130,6 +130,7 @@ showMainButton.addEventListener("click", () => display(mainView));
 backToMainButton.addEventListener("click", () => display(mainView));
 makePosterButton.addEventListener("click", createUserPoster);
 savePosterButton.addEventListener("click", savePoster);
+savedPostersGrid.addEventListener("dblclick", deletePoster);
 
 // functions and event handlers go here 👇
 function getRandom() {
@@ -158,7 +159,7 @@ function displaySavedPosters() {
 
   for (const poster of savedPosters) {
     savedPostersGrid.innerHTML += `
-      <div class="mini-poster">
+      <div class="mini-poster" id="${poster.id}">
         <img class="poster-img" src=${poster.imageURL}>
         <h2 class="poster-title">${poster.title}</h2>
         <h4 class="poster-quote">${poster.quote}</h4>
@@ -205,4 +206,12 @@ function createPoster(imageURL, title, quote) {
     title: title, 
     quote: quote,
   }
+}
+
+function deletePoster(event) {
+  const poster = event.target.closest(".mini-poster");
+  const posterIndex = savedPosters.findIndex((miniPoster) => miniPoster.id === poster.id);
+
+  savedPosters.splice(posterIndex, 1);
+  poster.remove();
 }

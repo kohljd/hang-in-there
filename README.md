@@ -56,7 +56,7 @@ In summary: Be able to switch between the three views (main poster, form, and sa
 
 ### Iteration 2
 - [x] On the new poster form view, users should be able to fill out the three input fields and then hit the Show My Poster button
-- [ ] When the Show My Poster button is clicked, several things will happen:
+- [x] When the Show My Poster button is clicked, several things will happen:
   - [x] Use the values from the inputs to create a new, unique poster object (part of your data model)
   - [x] Save the submitted data into the respective arrays (image URL into the images array, etc - all part of your data model) so that future random posters can use the user-created data
   - [x] Change back to the main poster view (hiding the form view again)
@@ -69,7 +69,7 @@ In summary: Be able to switch between the three views (main poster, form, and sa
 - [x] All the posters in the savedPosters array should be displayed in the saved posters grid section
 
 ### Iteration 4
-- [ ] From the saved posters view, if a user double clicks a saved poster, it will be deleted
+- [x] From the saved posters view, if a user double clicks a saved poster, it will be deleted
   - HTML onclick attributes should not be used in any HTML code - all functionality should be through JavaScript.
 
 ### Optional Extensions
