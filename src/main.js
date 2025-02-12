@@ -15,7 +15,8 @@ const mainView = document.querySelector(".main-poster");
 const formView = document.querySelector(".poster-form");
 const savedView = document.querySelector(".saved-posters");
 
-// const form = document.querySelector(".poster-form")
+const savedPostersGrid = document.querySelector(".saved-posters-grid");
+
 // we've provided you with some data to work with 👇
 // tip: you can tuck this data out of view with the dropdown found near the line number where the variable is declared 
 var images = [
@@ -124,6 +125,7 @@ document.addEventListener("DOMContentLoaded", getRandom);
 randomButton.addEventListener("click", getRandom);
 posterFormButton.addEventListener("click", () => display(formView));
 showSavedButton.addEventListener("click", () => display(savedView));
+showSavedButton.addEventListener("click", displaySavedPosters);
 showMainButton.addEventListener("click", () => display(mainView));
 backToMainButton.addEventListener("click", () => display(mainView));
 makePosterButton.addEventListener("click", createUserPoster);
@@ -148,6 +150,20 @@ function display(viewName) {
     } else {
       view.classList.add("hidden");
     }
+  }
+}
+
+function displaySavedPosters() {
+  savedPostersGrid.innerHTML = ""
+
+  for (const poster of savedPosters) {
+    savedPostersGrid.innerHTML += `
+      <div class="mini-poster">
+        <img class="poster-img" src=${poster.imageURL}>
+        <h2 class="poster-title">${poster.title}</h2>
+        <h4 class="poster-quote">${poster.quote}</h4>
+      </div>
+    `
   }
 }
 
