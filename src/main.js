@@ -7,13 +7,15 @@ const randomButton = document.querySelector(".show-random");
 const posterFormButton = document.querySelector(".show-form");
 const showSavedButton = document.querySelector(".show-saved");
 const showMainButton = document.querySelector(".show-main");
-const backToMainButton = document.querySelector(".back-to-main");
+const showUnmotivationalButton = document.querySelector(".show-unmotivational");
+const backToMainButtons = document.querySelectorAll(".back-to-main");
 const makePosterButton = document.querySelector(".make-poster");
 const savePosterButton = document.querySelector(".save-poster");
 
 const mainView = document.querySelector(".main-poster");
 const formView = document.querySelector(".poster-form");
 const savedView = document.querySelector(".saved-posters");
+const unmotivationalView = document.querySelector(".unmotivational-posters");
 
 const savedPostersGrid = document.querySelector(".saved-posters-grid");
 
@@ -126,8 +128,11 @@ randomButton.addEventListener("click", getRandom);
 posterFormButton.addEventListener("click", () => display(formView));
 showSavedButton.addEventListener("click", () => display(savedView));
 showSavedButton.addEventListener("click", displaySavedPosters);
+showUnmotivationalButton.addEventListener("click", () => display(unmotivationalView));
 showMainButton.addEventListener("click", () => display(mainView));
-backToMainButton.addEventListener("click", () => display(mainView));
+backToMainButtons.forEach((backButton) => {
+  backButton.addEventListener("click", () => display(mainView));
+});
 makePosterButton.addEventListener("click", createUserPoster);
 savePosterButton.addEventListener("click", savePoster);
 savedPostersGrid.addEventListener("dblclick", deletePoster);
@@ -143,11 +148,11 @@ function getRandom() {
 }
 
 function display(viewName) {
-  const views = [mainView, formView, savedView];
+  const views = [mainView, formView, savedView, unmotivationalView];
 
   for (const view of views) {
     if (view === viewName) {
-      view.classList.toggle("hidden");
+      view.classList.remove("hidden");
     } else {
       view.classList.add("hidden");
     }
