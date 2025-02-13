@@ -214,10 +214,9 @@ let unmotivationalPosters = [
 Let’s assume this data was pulled from a database. Each object has more data than what we need for creating and displaying posters. Our posters only have, and only need, an id, imageURL, title and quote. We’ll want to clean this data before we use it in our application.
 
 Copy/paste the dataset into your main.js file after the existing arrays of images, titles and quotes.
-- [ ] Create a `cleanData()` function to go through each piece of this data and make it match the format we’ve been using for our poster data.
+- [x] Create a `cleanData()` function to go through each piece of this data and make it match the format we’ve been using for our poster data.
 - [ ] When a user visits the Unmotivational Posters view, we should see all 15 unmotivational posters displayed immediately. Use the cleaned data for this.
   - Don’t worry about the layout or styling yet
-
 
 ### Iteration 6
 - [ ] From the unmotivational posters view, if a user double clicks a poster, it will be deleted
