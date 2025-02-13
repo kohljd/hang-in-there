@@ -73,11 +73,11 @@ In summary: Be able to switch between the three views (main poster, form, and sa
   - HTML onclick attributes should not be used in any HTML code - all functionality should be through JavaScript.
 
 ### Iteration 5
-- [ ] On the main view, a user should see a newly added “Unmotivational Posters” button located after the existing buttons.
+- [x] On the main view, a user should see a newly added “Unmotivational Posters” button located after the existing buttons.
 - [ ] When a user clicks the “Unmotivational Posters” button, we should see an newly created Unmotivational Posters html section with:
-  - [ ] a title of “Unmotivational Posters”
-  - [ ] a div that will eventually hold the displayed posters (not actually a visible part of the page until posters are displayed)
-  - [ ] a “Back to Main” button
+  - [x] a title of “Unmotivational Posters”
+  - [x] a div that will eventually hold the displayed posters (not actually a visible part of the page until posters are displayed)
+  - [x] a “Back to Main” button
 - [ ] The main poster view should be hidden when viewing the Unmotivational Posters view
 - [ ] When a user clicks the “Back to Main” button, we should see the main poster view and the unmotivational posters view should be hidden.
 
@@ -214,7 +214,7 @@ let unmotivationalPosters = [
 Let’s assume this data was pulled from a database. Each object has more data than what we need for creating and displaying posters. Our posters only have, and only need, an id, imageURL, title and quote. We’ll want to clean this data before we use it in our application.
 
 Copy/paste the dataset into your main.js file after the existing arrays of images, titles and quotes.
-- [ ] Create a cleanData() function to go through each piece of this data and make it match the format we’ve been using for our poster data.
+- [ ] Create a `cleanData()` function to go through each piece of this data and make it match the format we’ve been using for our poster data.
 - [ ] When a user visits the Unmotivational Posters view, we should see all 15 unmotivational posters displayed immediately. Use the cleaned data for this.
   - Don’t worry about the layout or styling yet
 
