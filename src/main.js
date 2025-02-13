@@ -18,6 +18,7 @@ const savedView = document.querySelector(".saved-posters");
 const unmotivationalView = document.querySelector(".unmotivational-posters");
 
 const savedPostersGrid = document.querySelector(".saved-posters-grid");
+const unmotivatedPostersGrid = document.querySelector(".unmotivational-posters-grid");
 
 // we've provided you with some data to work with 👇
 // tip: you can tuck this data out of view with the dropdown found near the line number where the variable is declared 
@@ -255,6 +256,7 @@ posterFormButton.addEventListener("click", () => display(formView));
 showSavedButton.addEventListener("click", () => display(savedView));
 showSavedButton.addEventListener("click", displaySavedPosters);
 showUnmotivationalButton.addEventListener("click", () => display(unmotivationalView));
+showUnmotivationalButton.addEventListener("click", displayUnmotivationalPosters);
 showMainButton.addEventListener("click", () => display(mainView));
 backToMainButtons.forEach((backButton) => {
   backButton.addEventListener("click", () => display(mainView));
@@ -290,6 +292,20 @@ function displaySavedPosters() {
 
   for (const poster of savedPosters) {
     savedPostersGrid.innerHTML += `
+      <div class="mini-poster" id="${poster.id}">
+        <img class="poster-img" src=${poster.imageURL}>
+        <h2 class="poster-title">${poster.title}</h2>
+        <h4 class="poster-quote">${poster.quote}</h4>
+      </div>
+    `
+  }
+}
+
+function displayUnmotivationalPosters() {
+  unmotivatedPostersGrid.innerHTML = ""
+
+  for (const poster of savedUnmotivationalPosters) {
+    unmotivatedPostersGrid.innerHTML += `
       <div class="mini-poster" id="${poster.id}">
         <img class="poster-img" src=${poster.imageURL}>
         <h2 class="poster-title">${poster.title}</h2>

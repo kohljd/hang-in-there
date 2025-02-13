@@ -215,7 +215,7 @@ Let’s assume this data was pulled from a database. Each object has more data t
 
 Copy/paste the dataset into your main.js file after the existing arrays of images, titles and quotes.
 - [x] Create a `cleanData()` function to go through each piece of this data and make it match the format we’ve been using for our poster data.
-- [ ] When a user visits the Unmotivational Posters view, we should see all 15 unmotivational posters displayed immediately. Use the cleaned data for this.
+- [x] When a user visits the Unmotivational Posters view, we should see all 15 unmotivational posters displayed immediately. Use the cleaned data for this.
   - Don’t worry about the layout or styling yet
 
 ### Iteration 6
