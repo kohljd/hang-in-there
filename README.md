@@ -219,7 +219,7 @@ Copy/paste the dataset into your main.js file after the existing arrays of image
   - Don’t worry about the layout or styling yet
 
 ### Iteration 6
-- [ ] From the unmotivational posters view, if a user double clicks a poster, it will be deleted
+- [x] From the unmotivational posters view, if a user double clicks a poster, it will be deleted
   - Users should be able to double click anywhere on the poster to delete it - on the image, text or background.
   - HTML onclick attributes should not be used in any HTML code - all functionality should be through JavaScript.
   - The poster should be removed from your cleaned unmotivational posters data set and should no longer be displayed on the DOM.

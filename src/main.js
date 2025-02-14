@@ -264,6 +264,7 @@ backToMainButtons.forEach((backButton) => {
 makePosterButton.addEventListener("click", createUserPoster);
 savePosterButton.addEventListener("click", savePoster);
 savedPostersGrid.addEventListener("dblclick", deletePoster);
+unmotivatedPostersGrid.addEventListener("dblclick", deleteUnmotivationalPoster);
 
 // functions and event handlers go here 👇
 function getRandom() {
@@ -357,16 +358,24 @@ function createPoster(imageURL, title, quote) {
 
 function deletePoster(event) {
   const poster = event.target.closest(".mini-poster");
-  const posterIndex = savedPosters.findIndex((miniPoster) => miniPoster.id === poster.id);
+  const posterIndex = savedPosters.findIndex((miniPoster) => miniPoster.id === Number(poster.id));
 
   savedPosters.splice(posterIndex, 1);
   poster.remove();
 }
 
+function deleteUnmotivationalPoster(event) {
+  const poster = event.target.closest(".mini-poster");
+  const posterIndex = savedUnmotivationalPosters.findIndex((miniPoster) => miniPoster.id === Number(poster.id));
+  console.log("index:", posterIndex);
+  savedUnmotivationalPosters.splice(posterIndex, 1);
+  poster.remove();
+}
+
 function cleanData() {
   for (const poster of unmotivationalPosters) {
-    savedUnmotivationalPosters.push(
-      createPoster(poster.img_url, poster.name, poster.description)
-    );
+    let new_poster = createPoster(poster.img_url, poster.name, poster.description);
+    new_poster.id = new_poster.id + unmotivationalPosters.indexOf(poster);
+    savedUnmotivationalPosters.push(new_poster);
   }
 }
