@@ -307,7 +307,7 @@ function displayUnmotivationalPosters() {
 
   for (const poster of savedUnmotivationalPosters) {
     unmotivatedPostersGrid.innerHTML += `
-      <div class="mini-poster" id="${poster.id}">
+      <div class="mini-poster unmotivational-poster" id="${poster.id}">
         <img class="poster-img" src=${poster.imageURL}>
         <h2 class="poster-title">${poster.title}</h2>
         <h4 class="poster-quote">${poster.quote}</h4>
